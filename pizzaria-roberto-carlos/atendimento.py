@@ -1,12 +1,12 @@
-name = input("Olá Digite o seu nome:").lower()
 pizaria = "Roberto Carlos"
 cardapio = ["Pizzeria Artesanal","Pizza 1846","Pizzaria Que Bella","Esfiharia Tio Pepi","Pizzaria Italiana"]
 valor = [35,40,45,40,60]
 all_pedidos = []
 all_quantidades = []
 total_pp = []
-print(f"Olá {name.title()} bem vindo a pizaria {pizaria}\n O que deseja pedir hoje.\n {cardapio}\n {valor}")
+name = input("Olá Digite o seu nome:").lower()
 while True:
+    print(f"Olá {name.title()} bem vindo a pizaria {pizaria}\n O que deseja pedir hoje.\n {cardapio}\n {valor}")
     pedido = input().title()
     if pedido in cardapio:
         while True:
