@@ -1,5 +1,5 @@
 Estudos de Python: Lógica e Fundamentos
-Repositório para organizar meus exercícios de lógica de programação e acompanhar minha evolução na linguagem Python.
+Repositório criado para organizar meus exercícios de lógica de programação e acompanhar minha evolução na linguagem Python.
 
 Conceitos Praticados
  *Estruturas de Repetição:** Loops `while` aninhados e controle de fluxo.
