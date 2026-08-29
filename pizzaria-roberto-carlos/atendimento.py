@@ -1,13 +1,30 @@
 pizaria = "Roberto Carlos"
-cardapio = ["Pizzeria Artesanal","Pizza 1846","Pizzaria Que Bella","Esfiharia Tio Pepi","Pizzaria Italiana"]
-valor = [35,40,45,40,60]
+
+cardapio = {
+            'Pizzeria Artesanal' : 35,
+            "Pizza 1846" : 40 ,
+            "Pizzaria Que Bella" : 45, 
+            "Esfiharia Tio Pepi" : 40,
+            "Pizzaria Italiana" : 60,
+            }
+
 all_pedidos = []
-all_quantidades = []
+
 total_pp = []
+
 name = input("Olá Digite o seu nome:").lower()
-while True:
-    print(f"Olá {name.title()} bem vindo a pizaria {pizaria}\n O que deseja pedir hoje.\n {cardapio}\n {valor}")
-    pedido = input().title()
+mais_pedido = "z"
+print(f"Olá {name.title()} bem vindo a pizaria {pizaria}\n")
+
+#aqui recebemos o pedido na variavel pedido e verificamos se esta no cardapio.
+
+while mais_pedido != "n"
+    mais_pedido = "z"
+    print(f"O que deseja pedir hoje.\n {cardapio}")
+    pedido = input().title().strip()
+
+    #com o pedido sendo valido podemos pedir a quantidade e validala
+
     if pedido in cardapio:
         while True:
             try:
@@ -15,39 +32,39 @@ while True:
                 if quantidade <= 0:
                     print("Por favor, digite um número maior que zero.")
                 elif quantidade > 0:
-                    all_pedidos.append(pedido)
-                    all_quantidades.append(quantidade)
+                    all_pedidos.append([pedido,quantidade])
                     break
             except ValueError:
                     print("Entrada inválida! Digite um número inteiro.")
-        while True:
-            mais_pedido = input("deseja mais alguma coisa, se sim digite 'y' se nao digite 'n':")
-            if mais_pedido.strip().lower() == "n":
-                very = 0
-                break
-            elif mais_pedido.lower().strip() == "y":
-                very = 1
-                break
-            else:
-                print("digite 'y' ou 'n'.")
-        if very == 0:
-            break
+        #verificaçao de continuaçao
+        while mais_pedido not in ['y','n']:
+            mais_pedido = input("deseja mais alguma coisa, se sim digite 'y' se nao digite 'n' "
+            "\n--caso essa mansagen apareça novamente verifique a escrita--:").lower().strip()
+
     else:
         print(f"Desculpa nao temos {pedido} no nosso cardapio, tente novamente")
-i = 0
-for ped in all_pedidos:
-    numero_p = cardapio.index(all_pedidos[i])
-    total_pp.append(valor[numero_p] * all_quantidades[i])
-    print (f"O valor de {all_quantidades[i]} {all_pedidos[i]} é de: $ {total_pp[i]}Rs")
-    i += 1
+
+# processamento e exibiçao de subtotais
+
+for pedid in all_pedidos:
+    preco = cardapio[pedid[0]]
+    pedid.append(preco * pedid[1])
+    print (f"O valor de {pedid[1]} {pedid[0]} é de: $ {pedid[2]}Rs")
+    total_pp.append(pedid[2])
 total = sum(total_pp)
-while True:
-    estudante = input("Tem direito  desconto por estudante? -Sim- ou -Nao:")
-    if estudante.lower().strip() == "sim":
+
+#validaççao de desconto de estudante
+
+estudante = " "
+while estudante not in ['sim','nao']:
+    estudante = input("Tem direito a desconto de estudante? -Sim- ou -Nao:").lower().strip()
+    if estudante == "sim":
         total = total * 0.9
-        break
-    elif estudante.lower().strip() == "nao":
-        break
-    else:
+    elif estudante != "nao":
         print("Digite 'sim' ou 'nao' sem acento.")
+
+#recibo final organizado
+
+for pedid in all_pedidos:
+    print (f"{pedid[0]} x{pedid[1]}Un Vl-unit: {cardapio[pedid[0]]} total: $ {pedid[2]}Rs")
 print (f"O falor total a ser pago e de $ {total}Rs")
