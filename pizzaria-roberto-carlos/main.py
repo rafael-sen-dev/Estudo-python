@@ -1,0 +1,11 @@
+import admin
+import user
+
+while True:
+    login = input("deseja fazer um pedido ou login \n Digite 'P'para pedido 'L' para login e 'S' para sair").lower().strip()
+    if login == "p":
+        user.log_user()
+    elif login == "l":
+        print(" ")
+    elif login == 's':
+        break
