@@ -6,6 +6,7 @@ while True:
     if login == "p":
         user.log_user()
     elif login == "l":
-        print(" ")
+        admin.log_admin()
+        admin.interface_admin()
     elif login == 's':
         break

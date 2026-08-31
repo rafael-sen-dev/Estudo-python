@@ -2,9 +2,12 @@ import cliente
 import cardapio
 
 def pedido():
-    n_ped = len(cliente.cl_pedido) + 1
+    if cliente.cl_pedido:
+        n_ped = max(cliente.cl_pedido.keys()) + 1
+    else:
+        n_ped = 0
     for item, valor in cardapio.pizzas.items() :
-        print(f" {item} + {valor['custo']}")
+        print(f" {item} + {valor['custo']} + {valor['ingredientes']}")
     pedid ='pp'
     while pedid not in cardapio.pizzas :
         pedid = input("Escolha o sabor")
@@ -28,10 +31,13 @@ def pedido():
     while tamanho not in cardapio.tamanhos:
         tamanho = input('escolha o tamanho da pizza').title().strip()
     obs = input('Alguma obicervação?')
+    preco = (cardapio.pizzas[pedid]['custo'] * cardapio.tamanhos[tamanho]) + cardapio.bordas[borda] + cardapio.refri[refri]
+    preco = round(preco,2)
     cliente.cl_pedido[n_ped] = {'sabor' : pedid,
                                 'borda' : borda,
                                 'refri' : refri,
                                 'tamanho' : tamanho,
+                                'total'  : preco,
                                 'observaçao' : obs}
     return n_ped
 

@@ -3,9 +3,9 @@ pizzas = {
         'ingredientes': ['molho', 'queijo', 'calabresa'],
         'custo': 0.20
     },
-    'Calabresa com Catupiry': {  # Nome corrigido (estava duplicado como 'Calabresa')
+    'Calabresa com Catupiry': { 
         'ingredientes': ['molho', 'queijo', 'calabresa', 'Catupiry'],
-        'custo': 0.23  # Vírgula substituída por ponto decimal
+        'custo': 0.23  
     },
     'Frango com Catupiry': {
         'ingredientes': ['molho', 'queijo', 'frango', 'Catupiry'],
@@ -43,3 +43,5 @@ tamanhos = {'Pequena' : 625,
             'Media': 900, 
             'Grande' : 1.225,
             'Familia' : 1.600}
+
+
