@@ -24,7 +24,7 @@ def pedidos():
                     print(f'{ped} {sab}')
                     print("--------------------------------------------------------")
     while True:
-        painel = input('digite:\n\t(1)Para concluir pedido (S)para sair').strip().lower()
+        painel = input('digite:\n\t(1)Para concluir pedido\n(S)para sair\nDigite:').strip().lower()
         if painel == '1':
             num_pedido == input("Digite o num do pedido par concluir").strip().lower()
             estoque.very_estoque(num_pedido)

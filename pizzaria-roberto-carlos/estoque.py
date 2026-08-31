@@ -95,7 +95,7 @@ def very_estoque(num_pedido):
 
 def estoque_control():
     while True:
-        painel = input("(1)Verificas estoque\n(2)Adicionar ao estoque\n(S)voltar").lower().strip()
+        painel = input("(1)Verificas estoque\n(2)Adicionar ao estoque\n(S)voltar\nDigite:").lower().strip()
         if painel == '1':
             for items, valor in estoque.items():
                 print(f'{items}--------------------------------------{valor}')
